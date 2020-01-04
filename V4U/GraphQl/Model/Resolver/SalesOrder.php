@@ -69,6 +69,8 @@ class SalesOrder implements ResolverInterface
             $orderData = [
                 'increment_id' => $order->getIncrementId(),
                 'grand_total' => $order->getGrandTotal(),
+                'shipping_description' => $order->getShippingDescription(),
+                'status' => $order->getStatus(),
                 'customer_name' => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),
                 'is_guest_customer' => !empty($order->getCustomerIsGuest()) ? 1 : 0,
                 'address_array' => $shippingAddressArray
