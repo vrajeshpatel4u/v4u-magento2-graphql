@@ -37,3 +37,26 @@ Check using http://127.0.0.1/magento233/graphql url.
 ```
 ### Result 
 ![Sales_Order](V4U/GraphQl/docs/SalesOrderResults.png)
+
+### 2 Customer Order Placed Data
+
+Check using http://127.0.0.1/magento233/graphql url. 
+
+```
+{
+  customerPlacedOrder (customer_id: 1) {
+    allOrderRecords{
+      increment_id
+      customer_name
+      grand_total
+      created_at
+      shipping_method
+    }
+  }
+}
+```
+### Result 
+![Customer_Placed_Order](V4U/GraphQl/docs/CustomerPlacedOrder.png)
+
+
+
