@@ -1,0 +1,13 @@
+type Query {
+    salesOrder (
+        id: Int @doc(description: "Id of the Sales Order")
+    ): SalesOrder @resolver(class: "V4U\\GraphQl\\Model\\Resolver\\SalesOrder") @doc(description: "The Sales Order query returns information about a Sales order")
+}
+
+type SalesOrder @doc(description: "Sales Order graphql gather Data of specific order information") {
+    increment_id: String @doc(description: "Increment Id of Sales Order")
+    customer_name: String @doc(description: "Customername of Sales Order")
+    grand_total: String @doc(description: "Grand total of Sales Order")
+    is_guest_customer : Boolean @doc(description: "Specifies if this order was placed by Guest cusotmer")
+    address_array: [String] @doc(description: "Array of order address types. It can have the following values: city, postcode,state")
+}
