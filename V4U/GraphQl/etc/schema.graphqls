@@ -6,6 +6,10 @@ type Query {
     customerPlacedOrder (
         customer_id: Int @doc(description: "Id of the Customer for fetch all the placed order")
     ): SalesOrderCollection @resolver(class: "V4U\\GraphQl\\Model\\Resolver\\CustomerOrder") @doc(description: "The Sales Order query returns information about customer all placed order")
+
+    productCollection: ProductCollection @resolver (
+        class: "V4U\\GraphQl\\Model\\Resolver\\ProductsResolver") 
+        @doc(description: "Get Product collection of a store")
 }
 
 type SalesOrder @doc(description: "Sales Order graphql gather Data of specific order information") {
@@ -26,4 +30,15 @@ type OrderRecord @doc(description: "Sales Order graphql gather Data of specific 
     grand_total: String @doc(description: "Grand total of Sales Order")
     created_at: String @doc(description: "Timestamp indicating when the order was placed")
     shipping_method: String @doc(description: "Shipping method for order placed")
+}
+
+type ProductCollection @doc(description: "product collection comment") {
+    allProducts: [ProductRecord] @doc(description: "Product records with info")
+}
+
+type ProductRecord {
+    sku: String @doc(description: "Get Product sku")
+    name: String @doc(description: "Get Product name")
+    price: Float @doc(description: "Get Product price")
+    status: String @doc(description: "Get Product Status")
 }

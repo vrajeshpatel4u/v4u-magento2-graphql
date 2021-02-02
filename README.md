@@ -21,7 +21,7 @@ You can check your GraphQL query response by installing chrome extension Chromei
 
 ### 1 Sales Order Data
 
-Check using http://127.0.0.1/magento233/graphql url. 
+Check using http://127.0.0.1/magento241/graphql url. 
 
 ```
 {
@@ -40,7 +40,7 @@ Check using http://127.0.0.1/magento233/graphql url.
 
 ### 2 Customer Order Placed Data
 
-Check using http://127.0.0.1/magento233/graphql url. 
+Check using http://127.0.0.1/magento241/graphql url. 
 
 ```
 {
@@ -58,5 +58,21 @@ Check using http://127.0.0.1/magento233/graphql url.
 ### Result 
 ![Customer_Placed_Order](V4U/GraphQl/docs/CustomerPlacedOrder.png)
 
+### 3 Get Product collection
 
+Check using http://127.0.0.1/magento241/graphql url. 
 
+```
+{
+  productCollection {
+    allProducts {
+      sku
+      name
+      price
+      status
+    }
+  }
+}
+```
+### Result 
+![Customer_Placed_Order](V4U/GraphQl/docs/ProductCollectionGraphQL.png)
