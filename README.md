@@ -75,4 +75,23 @@ Check using http://127.0.0.1/magento241/graphql url.
 }
 ```
 ### Result 
-![Customer_Placed_Order](V4U/GraphQl/docs/ProductCollectionGraphQL.png)
+![Product Collection](V4U/GraphQl/docs/ProductCollectionGraphQL.png)
+
+### 3 Get CMS Page collection
+
+Check using http://127.0.0.1/magento241/graphql url. 
+
+```
+{
+  cmsPages {
+    allPages {
+      name
+      identifier
+      content
+      page_layout
+    }
+  }
+}
+```
+### Result 
+![CMS Page Collection](V4U/GraphQl/docs/CMSPageCollectionGraphQl.png)
